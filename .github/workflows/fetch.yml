@@ -7,7 +7,7 @@ jobs:
     name: Crawl rss and generate static page
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@1.0.0
         name: Check out repository code
       - uses: i-valchev/rss-to-json@latest
         name: Fetch feeds
