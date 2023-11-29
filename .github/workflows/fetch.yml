@@ -17,6 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Check out repository code
+      - name: Set cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: pip|${{ hashFiles('src/requirements.txt') }}
       - name: Fetch feeds
         run: |
           python -m pip install --upgrade pip
