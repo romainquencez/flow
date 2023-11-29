@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-	  <h1>Flow</h1>
+    <h1>Flow</h1>
     <p>Généré le {{ site.time }}.</p>
     {% for feed in site.data.feeds %}
       <details open>
         <summary>
           <a href="{{ feed.link }}" title="Lien vers {{ feed.title }}">
-            {{ feed.title }}
+            {{ feed.title }} ({{ feed.entries|size }})
           </a>
         </summary>
         <ul>
