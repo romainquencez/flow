@@ -26,24 +26,44 @@
           </div>
         </div>
       </header>
+
+      <div class="nav-scroller py-1 mb-3 border-bottom">
+        <nav class="nav nav-underline justify-content-between">
+          <a href="#" class="nav-item nav-link link-body-emphasis active">Tout</a>
+        </nav>
+      </div>
     </div>
-    {% for feed in site.data.feeds %}
-      <details open>
-        <summary>
-          <a href="{{ feed.link }}" title="Lien vers {{ feed.title }}">
-            {{ feed.title }} ({{ feed.entries|size }})
-          </a>
-        </summary>
-        <ul>
-          {% for entry in feed.entries %}
-            <li>
-              <a href="{{ entry.link }}" title="Lien vers {{ entry.title }}">
-                {{ entry.title }}
-              </a>
-            </li>
+
+    <main class="container">
+      <div class="row mb-2">
+        <div class="col-md-6">
+          {% for feed in site.data.feeds %}
+            {% for entry in feed.entries %}
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary-emphasis">{{ feed.title }}</strong>
+                  <h3 class="mb-0">{{ entry.title }}</h3>
+                  <div class="mb-1 text-body-secondary">Nov 29</div>
+                  <p class="card-text mb-auto">Description</p>
+                  <a href="{{ entry.link }}" class="icon-link gap-1 icon-link-hover stretched-link" title="Lien vers {{ entry.title }}">
+                    Lire plus
+                  </a>
+                </div>
+
+                <div class="col-auto d-none d-lg-block">
+                  <img class="bd-placeholder-img" />
+                </div>
+              </div>
+            {% endfor %}
           {% endfor %}
-        </ul>
-      </details>
-    {% endfor %}
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+      <p>
+        Flow
+      </p>
+    </footer>
   </body>
 </html>
