@@ -8,6 +8,7 @@ feed = feedparser.parse("https://www.lemonde.fr/rss/une.xml")
 feeds.append(
   {
     "title": feed.get("title"),
+    "link": feed.get("link"),
     "description": feed.get("description"),
     "entries": [
       {
