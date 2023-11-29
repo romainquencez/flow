@@ -12,7 +12,7 @@ feeds.append(
       {
         "title": entry.get("title", ""),
         "link": entry.get("link", ""),
-      } for entry in data.entries
+      } for entry in feed.entries
     ]
   }
 )
