@@ -16,6 +16,9 @@ for line in txt_file.readlines():
         {
           "title": entry.title,
           "link": entry.link,
+          "description": entry.description,
+          "date": entry.get("published", entry.get("created", entry.get("updated"))),
+          "image": None,
         } for entry in data.entries
       ]
     }
