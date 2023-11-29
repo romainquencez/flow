@@ -11,7 +11,9 @@
   </head>
   <body>
     <h1>Flow</h1>
-    <p>Généré le {{ site.time }}.</p>
+    <p>
+      Généré le {{ site.time | %d/%m/%Y %H:%M }}.
+    </p>
     {% for feed in site.data.feeds %}
       <details open>
         <summary>
