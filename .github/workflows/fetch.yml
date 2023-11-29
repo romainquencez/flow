@@ -24,7 +24,6 @@ jobs:
           key: pip|${{ hashFiles('src/requirements.txt') }}
       - name: Fetch feeds
         run: |
-          python -m pip install --upgrade pip
           pip install -r src/requirements.txt
           python src/fetch.py
       - name: Setup Pages
