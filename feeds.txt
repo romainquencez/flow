@@ -1,0 +1,3 @@
+https://www.lemonde.fr/rss/une.xml
+https://www.liberation.fr/arc/outboundfeeds/rss-all/
+https://www.lepoint.fr/24h-infos/rss.xml
