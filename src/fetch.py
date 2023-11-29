@@ -8,25 +8,26 @@ entries = []
 txt_file = open("feeds.txt", "r")
 
 for line in txt_file.readlines():
-  data = feedparser.parse(line)
-  entries.append(
-    {
-        "title": entry.title,
-        "link": entry.link,
-        "description": entry.description,
-        "date": entry.get("published", entry.get("created", entry.get("updated"))),
-        "image": None,
-        "feed": {
-          "title": data.feed.title,
+    data = feedparser.parse(line)
+
+    for entry in data.entries:
+        entries.append(
+            {
+                "title": entry.title,
+                "link": entry.link,
+                "description": entry.description,
+                "date": entry.get("published", entry.get("created", entry.get("updated"))),
+                "image": None,
+                "feed": {
+                  "title": data.feed.title,
+                }
+            }
+    feeds.append(
+        {
+            "title": data.feed.title,
+            "link": data.feed.link,
         }
-      } for entry in data.entries
-  )
-  feeds.append(
-    {
-      "title": data.feed.title,
-      "link": data.feed.link,
-    }
-  )
+    )
 
 # dump feeds into a JSON file
 with open("_data/feeds.json", "w", encoding="utf-8") as file:
