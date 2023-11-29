@@ -7,17 +7,16 @@ feeds = []
 txt_file = open("feeds.txt", "r")
 
 for line in txt_file.readlines():
-  feed = feedparser.parse(line)
+  data = feedparser.parse(line)
   feeds.append(
     {
-      "title": feed.get("title"),
-      "link": feed.get("link"),
-      "description": feed.get("description"),
+      "title": data.feed.title,
+      "link": data.feed.link,
       "entries": [
         {
-          "title": entry.get("title", ""),
-          "link": entry.get("link", ""),
-        } for entry in feed.entries
+          "title": entry.title,
+          "link": entry.link,
+        } for entry in data.entries
       ]
     }
   )
