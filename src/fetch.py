@@ -19,5 +19,5 @@ feeds.append(
 )
 
 # dump feeds into a JSON file
-with open("feeds.json", "w", encoding="utf-8") as file:
+with open("_data/feeds.json", "w", encoding="utf-8") as file:
     json.dump(feeds, file, ensure_ascii=False, indent=4)
