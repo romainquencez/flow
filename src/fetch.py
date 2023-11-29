@@ -10,6 +10,7 @@ txt_file = open("feeds.txt", "r")
 for line in txt_file.readlines():
     data = feedparser.parse(line)
 
+    # add entries
     for entry in data.entries:
         entries.append(
             {
@@ -22,6 +23,9 @@ for line in txt_file.readlines():
                   "title": data.feed.title,
                 }
             }
+        )
+
+    # add feed
     feeds.append(
         {
             "title": data.feed.title,
