@@ -44,14 +44,14 @@
                   <strong class="d-inline-block mb-2 text-primary-emphasis">{{ feed.title }}</strong>
                   <h3 class="mb-0">{{ entry.title }}</h3>
                   <div class="mb-1 text-body-secondary">Nov 29</div>
-                  <p class="card-text mb-auto">Description</p>
+                  <p class="card-text mb-auto">{{ entry.description }}</p>
                   <a href="{{ entry.link }}" class="icon-link gap-1 icon-link-hover stretched-link" title="Lien vers {{ entry.title }}">
                     Lire plus
                   </a>
                 </div>
 
                 <div class="col-auto d-none d-lg-block">
-                  <img class="bd-placeholder-img" />
+                  <img src="{{ entry.image }}" class="bd-placeholder-img" />
                 </div>
               </div>
             {% endfor %}
