@@ -4,10 +4,14 @@ on:
     workflow_dispatch:
 jobs:
   fetch:
-    name: Crawl rss and generate static page
+    name: Fetch
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         name: Check out repository code
-      - uses: i-valchev/rss-to-json@1.0.0
-        name: Fetch feeds
+      - name: Fetch feeds
+        working-directory: src
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python fetch.py
