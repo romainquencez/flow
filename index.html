@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flow</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	  <h1>Flow</h1>
+    <p>Généré le {{ site.time }}.</p>
+    {% for feed in site.data.feeds %}
+      <details>
+        <summary>
+          <a href="{{ feed.link }}" title="Lien vers {{ feed.title }}">
+            {{ feed.title }}
+          </a>
+        </summary>
+        <ul>
+          {% for entry in feed.entries %}
+            <li>
+              <a href="{{ entry.link }}" title="Lien vers {{ entry.title }}">
+                {{ entry.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </details>
+    {% endfor %}
+  </body>
+</html>
