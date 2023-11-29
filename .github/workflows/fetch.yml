@@ -9,5 +9,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Check out repository code
-      - uses: i-valchev/rss-to-json
+      - uses: i-valchev/rss-to-json@latest
         name: Fetch feeds
