@@ -1,3 +1,7 @@
 ---
+layout: default
 ---
-<h1>Feed!</h1>
+{% assign feed = site.data.feeds[page.path] %}
+<h1>{{ feed.title }}</h1>
+Path : {{ page.path }}
+URL : {{ page.url }}
