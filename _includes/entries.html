@@ -9,7 +9,7 @@
           </a>
           <h3 class="mb-0">{{ entry.title }}</h3>
           <div class="mb-1 text-body-secondary">{{ entry.date | date: "%d/%m %H:%M" }}</div>
-          <p class="card-text mb-auto">{{ entry.description }}</p>
+          <p class="card-text mb-auto">{{ entry.description | strip_html | strip_newlines | truncatewords: 40 }}</p>
           <a href="{{ entry.link }}" class="icon-link gap-1 icon-link-hover stretched-link" title="Lien vers {{ entry.title }}">
             Lire plus
           </a>
