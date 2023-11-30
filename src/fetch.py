@@ -1,5 +1,6 @@
 import feedparser
 import json
+import os
 import shutil
 from slugify import slugify
 
@@ -39,6 +40,9 @@ for line in txt_file.readlines():
 
     # create page for feed
     shutil.copyfile("sample-feed.html", f"{slug}.html")
+
+# delete sample-feed file
+os.remove("sample-feed.html")
 
 # dump feeds into a JSON file
 with open("_data/feeds.json", "w", encoding="utf-8") as file:
