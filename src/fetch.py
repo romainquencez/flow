@@ -12,56 +12,60 @@ entries = []
 txt_file = open("feeds.txt", "r")
 
 for line in txt_file.readlines():
-    print(line)
-    data = feedparser.parse(line)
-    slug = slugify(data.feed.title)
-    url = f"{slug}.html"
-
-    feed_entries = []
-
-    # add entries
-    for entry in data.entries:
-        # get publication date
-        published_on = (
-            entry.get("published")
-            or entry.get("created")
-            or entry.get("updated")
-        )
-        published_on_parsed = None
-        if published_on is not None:
-            try:
-                published_on_parsed = parser.parse(published_on, fuzzy=True)
-            except (TypeError, parser.ParserError):
-                pass
+    try:
+        data = feedparser.parse(line)
+        slug = slugify(data.feed.title)
+        url = f"{slug}.html"
     
-        feed_entry = {
-            "title": entry.title,
-            "link": entry.link,
-            "description": entry.description,
-            "date": published_on_parsed,
-            "image": entry.enclosures[0].href if len(entry.enclosures) else None,
-            "feed": {
-              "title": data.feed.title,
-            },
-        }
-        entries.append(feed_entry)
-        feed_entries.append(feed_entry)
+        feed_entries = []
+    
+        # add entries
+        for entry in data.entries:
+            # get publication date
+            published_on = (
+                entry.get("published")
+                or entry.get("created")
+                or entry.get("updated")
+            )
+            published_on_parsed = None
+            if published_on is not None:
+                try:
+                    published_on_parsed = parser.parse(published_on, fuzzy=True)
+                except (TypeError, parser.ParserError):
+                    pass
+        
+            feed_entry = {
+                "title": entry.title,
+                "link": entry.link,
+                "description": entry.description,
+                "date": published_on_parsed,
+                "image": entry.enclosures[0].href if len(entry.enclosures) else None,
+                "feed": {
+                  "title": data.feed.title,
+                },
+            }
+            entries.append(feed_entry)
+            feed_entries.append(feed_entry)
 
-    # add feed
-    feeds.append(
-        {
-            "title": data.feed.title,
-            "link": data.feed.link,
-            "slug": slug,
-            "filename": url,
-            "description": data.feed.subtitle,
-            "image": data.feed.get("logo") or (data.feed.image["href"] if data.feed.get("image") else None),
-            "entries": feed_entries,
-        }
-    )
-
-    # create page for feed
-    shutil.copyfile("sample-feed.html", url)
+        # add feed
+        feeds.append(
+            {
+                "title": data.feed.title,
+                "link": data.feed.link,
+                "slug": slug,
+                "filename": url,
+                "description": data.feed.subtitle,
+                "image": data.feed.get("logo") or (data.feed.image["href"] if data.feed.get("image") else None),
+                "entries": feed_entries,
+            }
+        )
+    
+        # create page for feed
+        shutil.copyfile("sample-feed.html", url)
+    except Exception as error:
+        print(line)
+        print(error)
+        pass
 
 # sort all entries by date
 entries = sorted(entries, key=lambda d: d["date"], reverse=True) 
