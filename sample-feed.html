@@ -4,7 +4,7 @@ layout: default
 {% for feed in site.data.feeds %}
   {% if feed.filename == page.name %}
     <div class="row p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-      <div class="col-lg-8 px-0">
+      <div class="col-lg{% if not feed.image %}-8{% endif %} px-0">
         <h1 class="display-4 fst-italic">{{ feed.title }}</h1>
         {% if feed.description %}
           <p class="lead my-3">{{ feed.description }}</p>
