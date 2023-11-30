@@ -63,7 +63,7 @@ for line in txt_file.readlines():
     shutil.copyfile("sample-feed.html", url)
 
 # sort all entries by date
-entries = sorted(entries, key=lambda d: d["date"]) 
+entries = sorted(entries, key=lambda d: d["date"], reverse=True) 
 
 # delete sample-feed file
 os.remove("sample-feed.html")
