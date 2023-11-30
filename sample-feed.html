@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
-{% assign feed = site.data.feeds[page.slug] %}
+{% assign feed = site.data.feeds | where:feed.url page.name] %}
 <h1>{{ feed.title }}</h1>
-Slug : {{ page.slug }}
+Name : {{ page.name }}
+<ul>
+  {% for feed in site.data.feeds %}
+    <li>{{ feed.url }}</li>
+  {% endfor %}
+</ul>
