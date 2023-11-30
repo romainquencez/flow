@@ -19,16 +19,15 @@ for line in txt_file.readlines():
     # add entries
     for entry in data.entries:
         feed_entry = {
-                "title": entry.title,
-                "link": entry.link,
-                "description": entry.description,
-                "date": entry.get("published", entry.get("created", entry.get("updated"))),
-                "image": None,
-                "feed": {
-                  "title": data.feed.title,
-                }
-            }
-        )
+            "title": entry.title,
+            "link": entry.link,
+            "description": entry.description,
+            "date": entry.published or entry.created or entry.updated,
+            "image": entry.enclosures[0].href if len(entry.enclosures) else None,
+            "feed": {
+              "title": data.feed.title,
+            },
+        }
         entries.append(feed_entry)
         feed_entries.append(feed_entry)
 
