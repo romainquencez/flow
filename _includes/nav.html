@@ -16,8 +16,8 @@
   <div class="nav-scroller py-1 mb-3 border-bottom">
     <nav class="nav nav-underline justify-content-between">
       <a href="#" class="nav-item nav-link link-body-emphasis active">Tout</a>
-      {% for feed in site.data.feeds %}
-        <a href="#" class="nav-item nav-link link-body-emphasis active">
+      {% for feed in site.feeds %}
+        <a href="{{ feed.url }}" class="nav-item nav-link link-body-emphasis active">
           {{ feed.title }}
         </a>
       {% endfor %}
