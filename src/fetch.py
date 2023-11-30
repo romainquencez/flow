@@ -54,7 +54,7 @@ for line in txt_file.readlines():
                 "link": data.feed.link,
                 "slug": slug,
                 "filename": url,
-                "description": data.feed.subtitle,
+                "description": data.feed.get("subtitle"),
                 "image": data.feed.get("logo") or (data.feed.image["href"] if data.feed.get("image") else None),
                 "entries": feed_entries,
             }
