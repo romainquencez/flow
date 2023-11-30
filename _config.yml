@@ -1,5 +1,4 @@
-collections:
-  - feeds:
-    output: true
 exclude: ['src']
+plugins:
+  - jekyll-datapage-generator
 timezone: Europe/Paris
