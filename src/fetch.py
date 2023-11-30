@@ -13,6 +13,7 @@ txt_file = open("feeds.txt", "r")
 for line in txt_file.readlines():
     data = feedparser.parse(line)
     slug = slugify(data.feed.title)
+    url = f"{slug}.html"
 
     # add entries
     for entry in data.entries:
@@ -34,12 +35,12 @@ for line in txt_file.readlines():
         {
             "title": data.feed.title,
             "link": data.feed.link,
-            "slug": slug,
+            "url": url,
         }
     )
 
     # create page for feed
-    shutil.copyfile("sample-feed.html", f"{slug}.html")
+    shutil.copyfile("sample-feed.html", url)
 
 # delete sample-feed file
 os.remove("sample-feed.html")
