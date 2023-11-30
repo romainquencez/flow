@@ -69,8 +69,8 @@ os.remove("sample-feed.html")
 
 # dump feeds into a JSON file
 with open("_data/feeds.json", "w", encoding="utf-8") as file:
-    json.dump(feeds, file, ensure_ascii=False, indent=4)
+    json.dump(feeds, file, ensure_ascii=False, indent=4, default=str)
 
 # dump entries into a JSON file
 with open("_data/entries.json", "w", encoding="utf-8") as file:
-    json.dump(entries, file, ensure_ascii=False, indent=4)
+    json.dump(entries, file, ensure_ascii=False, indent=4, default=str)
