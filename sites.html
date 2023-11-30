@@ -5,7 +5,7 @@ layout: default
 <ul>
   {% for feed in site.data.feeds %}
     <li>
-      <a href="{{ feed.slug }}.html"">{{ feed.title }}</a>
+      <a href="{{ feed.slug }}.html"">{{ feed.title }}</a> ({{ feed.entries | size }})
     </li>
   {% endfor %}
 </ul>
