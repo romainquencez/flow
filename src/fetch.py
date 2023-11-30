@@ -38,7 +38,7 @@ for line in txt_file.readlines():
             "link": data.feed.link,
             "filename": url,
             "description": data.feed.subtitle,
-            "image": data.feed.logo or data.feed.image.href,
+            "image": data.feed.get("logo") or data.feed.image.href,
         }
     )
 
