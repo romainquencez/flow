@@ -1,3 +1,4 @@
+from dateutil import parser
 import feedparser
 import json
 import os
@@ -14,15 +15,29 @@ for line in txt_file.readlines():
     data = feedparser.parse(line)
     slug = slugify(data.feed.title)
     url = f"{slug}.html"
+
     feed_entries = []
 
     # add entries
     for entry in data.entries:
+        # get publication date
+        published_on = (
+            entry.get("published")
+            or entry.get("created")
+            or entry.get("updated")
+        )
+        published_on_parsed = None
+        if published_on is not None:
+            try:
+                published_on_parsed = parser.parse(published_on, fuzzy=True)
+            except (TypeError, parser.ParserError):
+                pass
+    
         feed_entry = {
             "title": entry.title,
             "link": entry.link,
             "description": entry.description,
-            "date": entry.published or entry.created or entry.updated,
+            "date": published_on_parsed,
             "image": entry.enclosures[0].href if len(entry.enclosures) else None,
             "feed": {
               "title": data.feed.title,
