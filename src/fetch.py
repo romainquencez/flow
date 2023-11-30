@@ -14,11 +14,11 @@ for line in txt_file.readlines():
     data = feedparser.parse(line)
     slug = slugify(data.feed.title)
     url = f"{slug}.html"
+    feed_entries = []
 
     # add entries
     for entry in data.entries:
-        entries.append(
-            {
+        feed_entry = {
                 "title": entry.title,
                 "link": entry.link,
                 "description": entry.description,
@@ -29,13 +29,17 @@ for line in txt_file.readlines():
                 }
             }
         )
+        entries.append(feed_entry)
+        feed_entries.append(feed_entry)
 
     # add feed
     feeds.append(
         {
             "title": data.feed.title,
             "link": data.feed.link,
-            "url": url,
+            "filename": url,
+            "description": data.feed.subtitle,
+            "image": data.feed.logo or data.feed.image.href,
         }
     )
 
