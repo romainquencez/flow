@@ -3,7 +3,7 @@ layout: default
 ---
 {% for feed in site.data.feeds %}
   {% if feed.filename == page.name %}
-    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="row p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
       <div class="col-lg-6 px-0">
         <h1 class="display-4 fst-italic">{{ feed.title }}</h1>
         {% if feed.description %}
@@ -15,8 +15,12 @@ layout: default
           </p>
         {% endif %}
       </div>
+      {% if feed.image %}
+        <div class="col-auto d-none d-lg-block">
+          <img src="{{ feed.image }}" aria-label="{{ feed.title }}" focusable="false" />
+        </div>
+      {% endif %}
     </div>
-
     {% include entries.html entries=feed.entries %}
   {% endif %}
 {% endfor %}
