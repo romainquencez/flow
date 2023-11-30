@@ -1,4 +1,5 @@
 collections:
-  - feeds
+  - feeds:
+    output: true
 exclude: ['src']
 timezone: Europe/Paris
