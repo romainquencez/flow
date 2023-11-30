@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-{% assign feed = site.data.feeds[page.path] %}
+{% assign feed = site.data.feeds[page.slug] %}
 <h1>{{ feed.title }}</h1>
-Path : {{ page.path }}
-URL : {{ page.url }}
+Slug : {{ page.slug }}
