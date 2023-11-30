@@ -14,7 +14,7 @@
 
         {% if entry.image %}
           <div class="col-auto d-none d-lg-block">
-            <img src="{{ entry.image }}" class="bd-placeholder-img" />
+            <img src="{{ entry.image }}" width="200" height="250" role="img" aria-label="{{ entry.title }}" preserveAspectRatio="xMidYMid slice" loading="lazy" focusable="false" />
           </div>
         {% endif %}
       </div>
