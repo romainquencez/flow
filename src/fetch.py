@@ -12,6 +12,7 @@ entries = []
 txt_file = open("feeds.txt", "r")
 
 for line in txt_file.readlines():
+    print(line)
     data = feedparser.parse(line)
     slug = slugify(data.feed.title)
     url = f"{slug}.html"
