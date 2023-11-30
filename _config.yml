@@ -1,2 +1,4 @@
+baseurl: /flow
+url: https://romainquencez.github.io
 exclude: ['src']
 timezone: Europe/Paris
