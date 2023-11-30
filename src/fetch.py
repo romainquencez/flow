@@ -1,5 +1,6 @@
 import feedparser
 import json
+from slugify import slugify
 
 feeds = []
 entries = []
@@ -30,6 +31,7 @@ for line in txt_file.readlines():
         {
             "title": data.feed.title,
             "link": data.feed.link,
+            "slug": slugify(data.feed.title),
         }
     )
 
