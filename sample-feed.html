@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign feed = site.data.feeds | where:feed.url page.name] %}
+{% assign feed = site.data.feeds | where:feed.url, page.name | first %}
 <h1>{{ feed.title }}</h1>
 Name : {{ page.name }}
 <ul>
