@@ -1,5 +1,6 @@
 import feedparser
 import json
+import shutil
 from slugify import slugify
 
 feeds = []
@@ -10,6 +11,7 @@ txt_file = open("feeds.txt", "r")
 
 for line in txt_file.readlines():
     data = feedparser.parse(line)
+    slug = slugify(data.feed.title)
 
     # add entries
     for entry in data.entries:
@@ -31,9 +33,12 @@ for line in txt_file.readlines():
         {
             "title": data.feed.title,
             "link": data.feed.link,
-            "slug": slugify(data.feed.title),
+            "slug": slug,
         }
     )
+
+    # create page for feed
+    shutil.copyfile("sample-feed.html", f"{slug}.html")
 
 # dump feeds into a JSON file
 with open("_data/feeds.json", "w", encoding="utf-8") as file:
