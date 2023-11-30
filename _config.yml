@@ -1,2 +1,4 @@
+collections:
+  - feeds
 exclude: ['src']
 timezone: Europe/Paris
