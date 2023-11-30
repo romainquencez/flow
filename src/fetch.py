@@ -61,6 +61,9 @@ for line in txt_file.readlines():
     # create page for feed
     shutil.copyfile("sample-feed.html", url)
 
+# sort all entries by date
+entries = sorted(entries, key=lambda d: d["date"]) 
+
 # delete sample-feed file
 os.remove("sample-feed.html")
 
