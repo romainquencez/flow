@@ -1,4 +1,12 @@
 exclude: ['src']
+page_gen-dirs: false
+page_gen:
+  - data: feeds
+    template: feed
+    dir: feeds
+    name: slug
+    title: title
+    debug: true
 plugins:
   - jekyll-datapage-generator
 timezone: Europe/Paris
