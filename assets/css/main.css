@@ -33,7 +33,6 @@ h1, h2, h3, h4, h5, h6 {
 .entry-image {
   width: 200px;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  background-color: #55595c;
   object-fit: contain;
 }
