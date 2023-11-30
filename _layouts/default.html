@@ -39,7 +39,7 @@
       <div class="nav-scroller py-1 mb-3 border-bottom">
         <nav class="nav nav-underline justify-content-between">
           <a href="{{ site.baseurl }}" class="nav-item nav-link link-body-emphasis">Tout</a>
-          <a href="{% link sites.html | prepend: site.baseurl %}" class="nav-item nav-link link-body-emphasis">Sites</a>
+          <a href="{{ site.baseurl }}{% link sites.html %}" class="nav-item nav-link link-body-emphasis">Sites</a>
         </nav>
       </div>
     </div>
