@@ -15,7 +15,7 @@
 
         {% if entry.image %}
           <div class="col-auto d-none d-lg-block">
-            <img style="background-image: url('{{ entry.image }}')" class="entry-image" aria-label="{{ entry.title }}" focusable="false" loading="lazy" />
+            <img src="{{ entry.image }}" class="entry-image" aria-label="{{ entry.title }}" focusable="false" loading="lazy" />
           </div>
         {% endif %}
       </div>
