@@ -1,26 +1,35 @@
 {
-  "France": [
-    "https://www.lemonde.fr/rss/une.xml",
-    "https://www.liberation.fr/arc/outboundfeeds/rss-all/",
-    "https://www.lepoint.fr/24h-infos/rss.xml"
-  ],
-  "Monde": [
-    "http://feeds.washingtonpost.com/rss/world"
-  ],
-  "Dev": [
-    "https://feeds.feedburner.com/blogspot/RLXA",
-    "https://blog.google/rss/",
-    "https://blog.google/products/chrome/rss",
-    "https://blog.mozilla.org/en/feed/",
-    "https://webkit.org/feed/rss/",
-    "https://ecma-international.org/feed/",
-    "https://blog.python.org/feeds/posts/default?alt=rss",
-    "https://css-tricks.com/feed/",
-    "http://us14.campaign-archive1.com/feed?u=809daf9442ece0a92a3d65f99&id=5693c0ed42",
-    "https://blog.rust-lang.org/feed.xml",
-    "https://www.docker.com/feed/",
-    "https://dev.to/feed/quasar",
-    "https://code.visualstudio.com/feed.xml",
-    "https://hacks.mozilla.org/feed/"
-  ]
+  {
+    "title": "France",
+    "feeds": [
+      "https://www.lemonde.fr/rss/une.xml",
+      "https://www.liberation.fr/arc/outboundfeeds/rss-all/",
+      "https://www.lepoint.fr/24h-infos/rss.xml"
+    ]
+  },
+  {
+    "title": "Monde",
+    "feeds": [
+      "http://feeds.washingtonpost.com/rss/world"
+    ]
+  },
+  {
+    "title": "Dev",
+    "feeds": [
+      "https://feeds.feedburner.com/blogspot/RLXA",
+      "https://blog.google/rss/",
+      "https://blog.google/products/chrome/rss",
+      "https://blog.mozilla.org/en/feed/",
+      "https://webkit.org/feed/rss/",
+      "https://ecma-international.org/feed/",
+      "https://blog.python.org/feeds/posts/default?alt=rss",
+      "https://css-tricks.com/feed/",
+      "http://us14.campaign-archive1.com/feed?u=809daf9442ece0a92a3d65f99&id=5693c0ed42",
+      "https://blog.rust-lang.org/feed.xml",
+      "https://www.docker.com/feed/",
+      "https://dev.to/feed/quasar",
+      "https://code.visualstudio.com/feed.xml",
+      "https://hacks.mozilla.org/feed/"
+    ]
+  }
 }
