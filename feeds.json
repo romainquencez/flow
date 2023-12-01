@@ -29,7 +29,8 @@
       "https://www.docker.com/feed/",
       "https://dev.to/feed/quasar",
       "https://code.visualstudio.com/feed.xml",
-      "https://hacks.mozilla.org/feed/"
+      "https://hacks.mozilla.org/feed/",
+      "https://www.engadget.com/rss.xml"
     ]
   }
 ]
