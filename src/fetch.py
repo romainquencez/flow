@@ -14,10 +14,10 @@ data = json.load(open("feeds.json", "r"))
 
 # iterate on groups
 for group in data:
-    group_slug = slugify(group.title)
+    group_slug = slugify(group["title"])
     groups.append(
         {
-            "title": group.title,
+            "title": group["title"],
             "slug": group_slug,
         }
     )
