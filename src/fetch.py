@@ -25,7 +25,7 @@ for group in data.keys():
     # iterate on group's feeds
     for feed in data[group]:
         try:
-            data = feedparser.parse(line)
+            data = feedparser.parse(feed)
             slug = slugify(data.feed.title)
             url = f"{slug}.html"
         
@@ -76,8 +76,7 @@ for group in data.keys():
             # create page for feed
             shutil.copyfile("sample-feed.html", url)
         except Exception as error:
-            print(line)
-            print(error)
+            print(f"⚠️ {feed} {error}")
             pass
 
 # sort all entries by date
