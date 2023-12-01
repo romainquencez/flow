@@ -23,7 +23,7 @@ for group in data:
     )
 
     # iterate on group's feeds
-    for feed in group.feeds:
+    for feed in group["feeds"]:
         try:
             data = feedparser.parse(feed)
             slug = slugify(data.feed.title)
