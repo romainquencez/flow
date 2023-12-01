@@ -1,4 +1,4 @@
-{
+[
   {
     "title": "France",
     "feeds": [
@@ -32,4 +32,4 @@
       "https://hacks.mozilla.org/feed/"
     ]
   }
-}
+]
