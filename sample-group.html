@@ -13,5 +13,7 @@ layout: default
         {% endif %}
       {% endfor %}
     </ul>
+
+    {% include entries.html entries=feed.entries %}
   {% endif %}
 {% endfor %}
