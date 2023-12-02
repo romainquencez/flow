@@ -72,7 +72,7 @@
         <nav class="nav nav-underline justify-content-between">
           <a href="{{ site.baseurl }}" class="nav-item nav-link link-body-emphasis">Tout</a>
           {% for group in site.data.groups %}
-            <a href="{{ site.baseurl }}{{ group.filename }}" class="nav-item nav-link link-body-emphasis">{{ group.title }}</a>
+            <a href="{{ site.baseurl }}/{{ group.filename }}" class="nav-item nav-link link-body-emphasis">{{ group.title }}</a>
           {% endfor %}
         </nav>
       </div>
