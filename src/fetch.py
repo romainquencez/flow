@@ -15,12 +15,17 @@ data = json.load(open("feeds.json", "r"))
 # iterate on groups
 for group in data:
     group_slug = slugify(group["title"])
+    group_url = f"{group_slug}.html"
     groups.append(
         {
             "title": group["title"],
             "slug": group_slug,
+            "filename": group_url,
         }
     )
+
+    # create page for group
+    shutil.copyfile("sample-group.html", group_url)
 
     # iterate on group's feeds
     for feed in group["feeds"]:
@@ -82,8 +87,9 @@ for group in data:
 # sort all entries by date
 entries = sorted(entries, key=lambda d: d["date"], reverse=True) 
 
-# delete sample-feed file
+# delete sample files
 os.remove("sample-feed.html")
+os.remove("sample-group.html")
 
 # dump feeds into a JSON file
 with open("_data/feeds.json", "w", encoding="utf-8") as file:
