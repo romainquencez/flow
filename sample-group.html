@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{% for group in site.data.groups %}
+  {% if group.filename == page.name %}
+    <h1 class="display-4 fst-italic">{{ group.title }}</h1>
+    <ul>
+      {% for feed in site.data.feeds %}
+        {% if feed.group == group.slug %}
+          <li>
+            <a href="{{ feed.slug }}.html"">{{ feed.title }}</a> ({{ feed.entries | size }})
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endfor %}
