@@ -1,6 +1,6 @@
 [
   {
-    "title": "France",
+    "title": "🇫🇷",
     "feeds": [
       "https://www.lemonde.fr/rss/une.xml",
       "https://www.liberation.fr/arc/outboundfeeds/rss-all/",
@@ -8,13 +8,19 @@
     ]
   },
   {
-    "title": "Monde",
+    "title": "🌍",
     "feeds": [
       "http://feeds.washingtonpost.com/rss/world"
     ]
   },
   {
-    "title": "Dev",
+    "title": "🪐",
+    "feeds": [
+      "https://spacenews.com/feed/"
+    ]
+  },
+  {
+    "title": "💻",
     "feeds": [
       "https://feeds.feedburner.com/blogspot/RLXA",
       "https://blog.google/rss/",
