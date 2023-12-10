@@ -14,7 +14,7 @@ data = json.load(open("feeds.json", "r"))
 
 # iterate on groups
 for group in data:
-    group_slug = slugify(group["title"])
+    group_slug = group["slug"]
     group_url = f"{group_slug}.html"
     groups.append(
         {
