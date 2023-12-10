@@ -19,7 +19,11 @@
     "title": "🪐",
     "slug": "espace",
     "feeds": [
-      "https://spacenews.com/feed/"
+      "https://spacenews.com/feed/",
+      "https://www.nasa.gov/news-release/feed/",
+      "http://www.esa.int/rss/France.xml",
+      "https://www.space.com/home/feed/site.xml",
+      "https://europeanspaceflight.com/feed/"
     ]
   },
   {
