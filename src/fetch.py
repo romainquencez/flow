@@ -47,14 +47,14 @@ for group in data:
                 published_on_parsed = None
                 if published_on is not None:
                     try:
-                        published_on_parsed = parser.parse(published_on, fuzzy=True)
+                        published_on_parsed = parser.parse(published_on, fuzzy=True).timestamp
                     except (TypeError, parser.ParserError):
                         pass
             
                 feed_entry = {
                     "title": entry.title,
                     "link": entry.link,
-                    "description": entry.description,
+                    "description": entry.get("description"),
                     "date": published_on_parsed,
                     "image": entry.enclosures[0].href if len(entry.enclosures) else None,
                     "feed": {
