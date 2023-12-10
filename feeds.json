@@ -32,7 +32,6 @@
     "feeds": [
       "https://feeds.feedburner.com/blogspot/RLXA",
       "https://blog.google/rss/",
-      "https://blog.google/products/chrome/rss",
       "https://blog.mozilla.org/en/feed/",
       "https://webkit.org/feed/rss/",
       "https://ecma-international.org/feed/",
