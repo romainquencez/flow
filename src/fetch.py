@@ -1,4 +1,5 @@
 from dateutil import parser
+from datetime import datetime
 import feedparser
 import json
 import os
@@ -44,7 +45,7 @@ for group in data:
                     or entry.get("created")
                     or entry.get("updated")
                 )
-                published_on_parsed = None
+                published_on_parsed = datetime.now()
                 if published_on is not None:
                     try:
                         published_on_parsed = parser.parse(published_on, fuzzy=True, ignoretz=True)
