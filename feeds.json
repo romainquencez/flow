@@ -5,14 +5,21 @@
     "feeds": [
       "https://www.lemonde.fr/rss/une.xml",
       "https://www.liberation.fr/arc/outboundfeeds/rss-all/",
-      "https://www.lepoint.fr/24h-infos/rss.xml"
+      "https://www.lepoint.fr/24h-infos/rss.xml",
+      "https://www.francetvinfo.fr/titres.rss",
+      "https://www.france24.com/fr/rss",
+      "https://www.europe1.fr/rss.xml",
+      "https://www.bfmtv.com/rss/news-24-7/",
+      "https://www.lefigaro.fr/rss/figaro_actualites.xml"
     ]
   },
   {
     "title": "🇺🇸",
     "slug": "usa",
     "feeds": [
-      "http://feeds.washingtonpost.com/rss/world"
+      "http://feeds.washingtonpost.com/rss/world",
+      "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+      "http://rss.cnn.com/rss/edition.rss"
     ]
   },
   {
@@ -27,7 +34,20 @@
     ]
   },
   {
-    "title": "💻",
+    "title": "📱",
+    "slug": "tech",
+    "feeds": [
+      "https://www.01net.com/actualites/feed/",
+      "https://www.engadget.com/rss.xml",
+      "https://www.apple.com/newsroom/rss-feed.rss",
+      "https://www.clubic.com/feed/news.rss",
+      "https://www.frandroid.com/feed",
+      "https://www.theverge.com/rss/index.xml",
+      "https://www.wired.com/feed/rss"
+    ]
+  }
+  {
+    "title": "👨‍💻",
     "slug": "dev",
     "feeds": [
       "https://feeds.feedburner.com/blogspot/RLXA",
@@ -43,7 +63,8 @@
       "https://dev.to/feed/quasar",
       "https://code.visualstudio.com/feed.xml",
       "https://hacks.mozilla.org/feed/",
-      "https://www.engadget.com/rss.xml"
+      "https://developer.apple.com/news/rss/news.rss",
+      "https://developer.apple.com/news/releases/rss/releases.rss"
     ]
   }
 ]
