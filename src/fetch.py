@@ -47,7 +47,7 @@ for group in data:
                 published_on_parsed = None
                 if published_on is not None:
                     try:
-                        published_on_parsed = parser.parse(published_on, fuzzy=True).timestamp
+                        published_on_parsed = parser.parse(published_on, fuzzy=True, ignoretz=True)
                     except (TypeError, parser.ParserError):
                         pass
             
